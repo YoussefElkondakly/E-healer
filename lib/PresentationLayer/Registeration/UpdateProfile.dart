@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:new_windows/main.dart';
 
 import '../../BussinessLogicLayer/UpdateProfile/updateprofile_cubit.dart';
 import '../Patientapp/Settings.dart';
@@ -577,6 +578,8 @@ class _UpdateProfileState extends State<UpdateProfile> {
                           backgroundColor: Colors.red,
                         ));
                       } else if (state is UpdateProfileSuccess) {
+
+                        pass.setString('pass',  Password.text,);
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: Text(
                             "Your Profile Updated Successfully",

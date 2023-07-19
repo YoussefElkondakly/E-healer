@@ -13,10 +13,13 @@ class RefuseApi{
     final token = await prefs.get('token');
     log('token: $token');
     log('IdKey: $data');
+    final password=await pass.get('pass');
+    log('the password cached is : $password');
     final headers ={
+
       "language":"en",
       "Content-Type":"application/json",
-      "api_password":"123456",
+      "api_password":password,
       "Authorization":"Bearer $token",
     };
     final response = await dio.get("$baseUrl/user/refuse-reservation/${data.values.single}",

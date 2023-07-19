@@ -19,12 +19,13 @@ import 'BussinessLogicLayer/user/get_user_cubit.dart';
 import 'BussinessLogicLayer/user/reservation_cubit.dart';
 import 'BussinessLogicLayer/user/user_reservation_report_cubit.dart';
 import 'BussinessLogicLayer/user/userreservation_cubit.dart';
-import 'PresentationLayer/Doctorapp/DoctorChat/DrChat.dart';
 import 'PresentationLayer/Welcome/Welcome1.dart';
 late SharedPreferences prefs;
+late SharedPreferences pass;
 Future<void> main()  async {
   WidgetsFlutterBinding.ensureInitialized();
   prefs = await SharedPreferences.getInstance();
+  pass=await SharedPreferences.getInstance();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../BussinessLogicLayer/LogIn/login_cubit.dart';
+import '../../main.dart';
 import '../Doctorapp/BottomNavD.dart';
 import '../Patientapp/BottomNav.dart';
 import 'SignUp.dart';
@@ -220,6 +221,7 @@ class _LoginState extends State<Login> {
                                     backgroundColor: Colors.red,
                                   ));
                                 } else if (state is LoginSuccess) {
+                                  pass.setString('pass', password.text);
                                   if (state.user.userType == "user") {
                                     Navigator.pushReplacement(
                                         context,

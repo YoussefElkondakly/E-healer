@@ -29,6 +29,7 @@ class LoginCubit extends Cubit<LoginState> {
       password: password,
     )
         .then((value) {
+
       prefs.setString('token', value?.user?.apiToken ?? '');
       user = value!.user;
       emit(LoginSuccess(user: value.user!));
